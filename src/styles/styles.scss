@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900');
+
+/* ---------- Colors ---------- */
+$white: #ffffff;
+$black: #202124;
+$lightGreen: #ccddc7;
+$green: #4c6f42;
+$darkGreen: #283d22;
+
+/* ---------- Global ---------- */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white;
+    color: $black;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: $darkGreen;
+}
+
+/* ---------- Header ---------- */
+.header-wrapper {
+    background-color: $green;
+    padding: 40px 20px 40px 20px;
+
+
+    .header-content {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search-wrapper {
+            color: $white;
+            width: 100%;
+            text-align: center;
+
+            h1 {
+                color: $white;
+                font-size: 1.8rem;
+                margin: 0;
+            }
+
+            p {
+                margin-top: 5px;
+            }
+        }
+
+        .image-wrapper {
+            display: none;
+            width: 50%;
+            text-align: left;
+            padding-left: 50px;
+
+            img {
+                width: 70%;
+                max-width: 320px;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding: 50px;
+        margin-bottom: 50px;
+        background: linear-gradient(90deg, rgba(76,111,66,1) 50%, rgba(204,221,199,1) 50%);
+
+        .header-content {
+
+            .search-wrapper {
+                width: 50%;
+                padding-right: 50px;
+                text-align: left;
+
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                }
+
+                .search-form {
+                    margin: 30px 0 0 0;
+                }
+            }
+
+            .image-wrapper {
+                display: block;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+    }
+
+    @media (min-width: 960px) {
+
+    }
+}
+
+.search-form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    margin: 0 auto;
+
+    input {
+        font-size: 0.9rem;
+        flex: 1;
+        padding: 15px 25px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        border: 1px solid $white;
+        transition: 0.4s;
+
+        &:focus, &:focus-visible {
+            box-shadow: 0 0 10px $lightGreen;
+            outline: none;
+        }
+    }
+
+    .search-btn {
+        background-color: $lightGreen;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        border-radius: 0 25px 25px 0;
+        padding: 10px 20px;
+        flex: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+        margin: 30px 0 0 0;
+    }
+}
+
+/* ---------- Main Content ---------- */
+.main-content-wrapper {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* ---------- Cocktail List ---------- */
+.cocktail-list-wrapper {
+    width: 100%;
+
+    @media (min-width: 768px) {
+        width: 70%;
+    }
+}
+
+.cocktail-list-item {
+    margin-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+    position: relative;
+    border-top: 1px solid #e1e7e0;
+
+    .image {
+        background-size: cover;
+        background-position: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+    }
+
+    .text {
+        flex: 1;
+        margin-left: 25px;
+
+        h3 {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin: 0;
+            flex: 1;
+            padding-right: 20px;
+
+            span {
+                font-weight: 700;
+            }
+        }
+
+        .add-btn {
+            background-color: #4c6f42;
+            color: white;
+            font-size: 25px;
+            height: 32px;
+            width: 32px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+
+    @media (min-width: 768px) {
+        margin-bottom: 20px;
+        padding-top: 20px;
+        margin-right: 40px;
+
+        .image {
+            width: 120px;
+            height: 120px;
+        }
+
+        .text {
+            margin-left: 20px;
+        }
+
+        .button-wrapper {
+            .add-btn {
+                font-size: 30px;
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+}
+
+/* ---------- Shopping List ---------- */
+.shopping-list-wrapper {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #e1e7e0;
+    border-radius: 6px;
+    margin-top: 20px;
+
+    @media (min-width: 768px) {
+        width: 30%;
+        margin-top: 0;
+    }
+}
+
+.shopping-list {
+    h2 {
+        margin-top: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            border-top: 1px solid #e1e7e0;
+            padding: 15px 0 15px 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete-btn {
+            background-color: $white;
+            border: none;
+            font-size: 28px;
+            transform: rotate(45deg);
+            line-height: 0;
+            cursor: pointer;
+        }
+    }
+
+    .print-btn-wrapper {
+
+        .print-btn {
+            background-color: #ccddc7;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            width: 100%;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+/* ---------- Toaster ---------- */
+.toaster-wrapper {
+    color: $black;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
+
+
+    p {
+        background-color: #f3f3f3;
+        font-weight: 500;
+        border-radius: 6px;
+        border: 1px solid #9d9d9d;
+        border-left-width: 5px;
+        padding: 20px;
+        margin: 0 20px;
+    }
+
+    &.green {
+
+        p {
+            background-color: #e1e7e0;
+            color: $green;
+            border-color: $green;
+        }
+
+    }
+
+    &.red {
+        p {
+            background-color: #f9dede;
+            color: #b93e3e;
+            border-color: #b93e3e;
+        }
+    }
+}
+
+/* ---------- Print styles ---------- */
+@media print {
+    .header-wrapper {
+        display: none;
+    }
+
+    .cocktail-list-wrapper {
+        display: none;
+    }
+
+    .shopping-list-wrapper {
+        border: none;
+        padding: 30px 0 0 0;
+    }
+
+    .shopping-list {
+        ul {
+            padding-left: 20px;
+
+            li {
+                list-style-type: disc;
+                display: list-item;
+                border: none;
+                padding: 5px 0;
+            }
+        }
+    }
+
+    .delete-btn {
+        display: none;
+    }
+
+    .print-btn {
+        display: none;
+    }
+}

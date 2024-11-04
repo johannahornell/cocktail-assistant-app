@@ -1,0 +1,25 @@
+{
+    "name": "cocktail-assistant",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "web-dev-server --config web-dev-server.config.mjs",
+        "build:sass": "sass src/styles/styles.scss dist/styles.css --no-source-map --style=compressed",
+        "watch:sass": "sass --watch src/styles/styles.scss:dist/styles.css --no-source-map --style=compressed"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "haunted": "^5.0.0",
+        "lit-html": "^3.2.1"
+    },
+    "devDependencies": {
+        "@web/dev-server": "^0.4.6",
+        "@web/dev-server-esbuild": "^1.0.2",
+        "sass": "^1.80.6",
+        "typescript": "^5.6.3"
+    }
+}
